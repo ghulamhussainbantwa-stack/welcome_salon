@@ -68,24 +68,32 @@
         revealElements.forEach((el, i) => {
             ScrollTrigger.create({
                 trigger: el,
-                start: 'top 90%',
+                start: 'top 92%', // Trigger slightly later for better feel
                 onEnter: () => {
                     setTimeout(() => {
                         el.classList.add('visible');
-                    }, i % 3 * 100); // Stagger based on row index
+                    }, i % 3 * 100); 
+                },
+                onUpdate: (self) => {
+                    // Fallback: If element is already past the trigger point on load
+                    if (self.progress > 0 && !el.classList.contains('visible')) {
+                        el.classList.add('visible');
+                    }
                 }
             });
         });
 
-        // Floating Elements Animation
-        gsap.to('.hero-float-card', {
-            y: -20,
-            duration: 2,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
-            stagger: 0.5
-        });
+        // Floating Elements Animation (with null check)
+        if (document.querySelector('.hero-float-card')) {
+            gsap.to('.hero-float-card', {
+                y: -20,
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: "power1.inOut",
+                stagger: 0.5
+            });
+        }
 
         // Newsletter Submission
         $('#newsletterForm').on('submit', function(e) {

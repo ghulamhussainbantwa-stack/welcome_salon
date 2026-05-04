@@ -11,6 +11,8 @@
     @yield('styles')
 </head>
 <body>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
 
     <nav id="sidebar" style="overflow-y: auto; max-height: 100vh; padding-bottom: 100px;">
         <div class="p-4 mb-2">
@@ -72,9 +74,14 @@
     <!-- Main Content -->
     <main id="main-content">
         <header class="d-flex justify-content-between align-items-center mb-5">
-            <div>
-                <h2 class="fw-bold mb-0">@yield('page-title')</h2>
-                <p class="text-secondary mb-0 small">@yield('page-subtitle')</p>
+            <div class="d-flex align-items-center">
+                <button id="mobile-sidebar-toggle" class="btn btn-neon d-lg-none me-3">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div>
+                    <h2 class="fw-bold mb-0">@yield('page-title')</h2>
+                    <p class="text-secondary mb-0 small">@yield('page-subtitle')</p>
+                </div>
             </div>
             <div class="d-flex align-items-center gap-3">
                 <div class="glass-card py-2 px-3 d-flex align-items-center gap-3">
@@ -105,11 +112,16 @@
             // CSRF for AJAX
             $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') } });
 
-            // Sidebar Toggle
+            // Sidebar Toggle (Desktop)
             $('#sidebar-toggle').click(function() {
                 $('#sidebar').toggleClass('collapsed');
                 $('#main-content').toggleClass('expanded');
-                $(this).find('i').toggleClass('fa-angles-left fa-angles-right');
+            });
+
+            // Mobile Sidebar Toggle
+            $('#mobile-sidebar-toggle, #sidebar-overlay').click(function() {
+                $('#sidebar').toggleClass('show');
+                $('#sidebar-overlay').toggleClass('show');
             });
 
             // GSAP Animations removed to fix visibility issues

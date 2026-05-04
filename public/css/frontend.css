@@ -456,7 +456,7 @@ body {
 }
 
 .form-label-dark {
-    color: var(--text-secondary);
+    color: #bbb;
     font-size: 0.85rem;
     font-weight: 500;
     margin-bottom: 8px;
