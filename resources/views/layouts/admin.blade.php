@@ -58,7 +58,7 @@
             </a>
         </div>
 
-        <div style="position:fixed;bottom:0;width:260px;padding:15px 20px;background:var(--bg-dark);border-top:1px solid var(--border-glass);z-index: 10;">
+        <div style="position:absolute;bottom:0;width:100%;padding:15px 20px;background:var(--bg-dark);border-top:1px solid var(--border-glass);z-index: 10;">
             <a href="{{ route('welcome') }}" target="_blank" class="nav-link text-neon-blue d-flex align-items-center gap-2 py-1">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i><span style="font-size: 0.85rem;">View Website</span>
             </a>

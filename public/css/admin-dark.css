@@ -280,7 +280,7 @@ h1, h2, h3, h4, h5, h6, .fw-bold {
 /* Responsive Design */
 @media (max-width: 991.98px) {
     #sidebar {
-        left: -var(--sidebar-width);
+        left: calc(-1 * var(--sidebar-width));
         box-shadow: 20px 0 50px rgba(0,0,0,0.8);
     }
     
