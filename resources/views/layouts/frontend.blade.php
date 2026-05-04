@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('css/frontend.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/frontend.css') }}?v={{ time() }}">
     
     <style>
         .py-100 { padding: 100px 0; }
