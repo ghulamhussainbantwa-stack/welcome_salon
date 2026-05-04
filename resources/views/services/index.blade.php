@@ -6,9 +6,9 @@
 
 @section('content')
 <div class="glass-card mb-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
         <h5 class="fw-bold mb-0">All Services</h5>
-        <button class="btn btn-neon" data-bs-toggle="modal" data-bs-target="#serviceModal" id="addServiceBtn">
+        <button class="btn btn-neon w-100 w-sm-auto" data-bs-toggle="modal" data-bs-target="#serviceModal" id="addServiceBtn">
             <i class="fa-solid fa-plus me-2"></i> Add Service
         </button>
     </div>

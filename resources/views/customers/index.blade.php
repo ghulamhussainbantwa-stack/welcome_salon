@@ -6,16 +6,16 @@
 
 @section('content')
 <div class="glass-card mb-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
         <h5 class="fw-bold mb-0">All Customers</h5>
-        <div class="d-flex gap-3">
-            <div class="input-group" style="max-width: 280px;">
+        <div class="d-flex flex-column flex-sm-row gap-2 w-100" style="max-width: 400px;">
+            <div class="input-group w-100">
                 <span class="input-group-text bg-transparent border-glass text-secondary">
                     <i class="fa-solid fa-search"></i>
                 </span>
                 <input type="text" id="customerSearch" class="form-control search-glow" placeholder="Search customers...">
             </div>
-            <button class="btn btn-neon" data-bs-toggle="modal" data-bs-target="#customerModal" id="addCustomerBtn">
+            <button class="btn btn-neon w-100 w-sm-auto" data-bs-toggle="modal" data-bs-target="#customerModal" id="addCustomerBtn">
                 <i class="fa-solid fa-plus me-2"></i> Add Customer
             </button>
         </div>
