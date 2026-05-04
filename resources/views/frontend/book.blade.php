@@ -14,8 +14,8 @@
 <section class="py-100 booking-section">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-7">
-                <div class="glass-card-front p-5">
+            <div class="col-12 col-lg-7">
+                <div class="glass-card-front p-4 p-md-5">
                     <h3 class="fw-bold mb-4">Your Information</h3>
                     <form id="publicBookingForm">
                         <div class="row g-3 mb-4">
@@ -71,7 +71,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-5">
+            <div class="col-12 col-lg-5">
                 <div>
                     <div class="glass-card-front mb-4">
                         <h5 class="fw-bold text-neon-blue mb-3">Why book online?</h5>

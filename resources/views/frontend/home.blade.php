@@ -153,7 +153,7 @@
             ];
             @endphp
             @foreach($packages as $pkg)
-            <div class="col-lg-4 reveal">
+            <div class="col-12 col-md-6 col-lg-4 reveal">
                 <div class="package-card h-100">
                     <div class="package-img-wrapper">
                         <img src="https://images.unsplash.com/photo-{{ $pkg['img'] }}?q=80&w=800&auto=format&fit=crop" alt="{{ $pkg['name'] }}" class="img-fluid">
@@ -271,7 +271,7 @@
         </div>
         <div class="row g-4">
             @for($i=1; $i<=3; $i++)
-            <div class="col-lg-4 reveal">
+            <div class="col-12 col-md-6 col-lg-4 reveal">
                 <div class="testimonial-card h-100 p-5">
                     <div class="stars mb-3">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>

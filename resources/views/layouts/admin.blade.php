@@ -77,30 +77,32 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <header class="d-flex justify-content-between align-items-center mb-5">
-            <div class="d-flex align-items-center">
-                <button id="mobile-sidebar-toggle" class="btn btn-neon d-lg-none me-3">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <div>
-                    <h2 class="fw-bold mb-0">@yield('page-title')</h2>
-                    <p class="text-secondary mb-0 small">@yield('page-subtitle')</p>
-                </div>
-            </div>
-            <div class="d-flex align-items-center gap-3">
-                <div class="glass-card py-2 px-3 d-flex align-items-center gap-3">
-                    <img src="https://ui-avatars.com/api/?name=Admin&background=00d2ff&color=fff" class="rounded-circle" width="34" alt="Admin">
+        <header class="admin-header mb-4">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <div class="d-flex align-items-center gap-2">
+                    <button id="mobile-sidebar-toggle" class="btn btn-neon d-lg-none" style="padding:8px 12px;">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                     <div>
-                        <p class="mb-0 fw-bold" style="font-size:0.85rem">Admin User</p>
-                        <small class="text-neon-blue" style="font-size:0.7rem">Super Admin</small>
+                        <h2 class="fw-bold mb-0 admin-page-title">@yield('page-title')</h2>
+                        <p class="text-secondary mb-0 small d-none d-md-block">@yield('page-subtitle')</p>
                     </div>
                 </div>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn-neon py-2 px-3" id="logoutBtn">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                    </button>
-                </form>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="glass-card py-2 px-3 d-flex align-items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=00d2ff&color=fff" class="rounded-circle" width="32" alt="Admin">
+                        <div class="d-none d-md-block">
+                            <p class="mb-0 fw-bold" style="font-size:0.8rem">Admin User</p>
+                            <small class="text-neon-blue" style="font-size:0.65rem">Super Admin</small>
+                        </div>
+                    </div>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn-neon py-2 px-3" id="logoutBtn">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
         </header>
 

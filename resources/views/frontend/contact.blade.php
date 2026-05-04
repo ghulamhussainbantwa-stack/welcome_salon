@@ -14,7 +14,7 @@
 <section class="py-100">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-5 reveal">
+            <div class="col-12 col-lg-5 reveal">
                 <h3 class="fw-bold mb-4">Location & Info</h3>
                 <div class="contact-info-item">
                     <div class="contact-icon">
@@ -57,8 +57,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-7 reveal">
-                <div class="glass-card-front p-5">
+            <div class="col-12 col-lg-7 reveal">
+                <div class="glass-card-front p-4 p-md-5">
                     <h3 class="fw-bold mb-4">Send a Message</h3>
                     <form id="contactForm">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

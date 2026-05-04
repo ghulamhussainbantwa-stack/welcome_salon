@@ -21,8 +21,8 @@
                     <a class="nav-link nav-link-custom {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
                 </li>
             </ul>
-            <div class="ms-lg-3 d-flex align-items-center gap-3">
-                <a href="{{ route('book') }}" class="btn-book-nav">Book Appointment</a>
+            <div class="ms-lg-3 d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3 mt-3 mt-lg-0">
+                <a href="{{ route('book') }}" class="btn-book-nav w-100 text-center">Book Appointment</a>
                 @auth
                     <a href="{{ route('dashboard') }}" class="nav-link nav-link-custom p-0" title="Admin Dashboard">
                         <i class="fa-solid fa-gauge-high fs-5 text-neon-blue"></i>
