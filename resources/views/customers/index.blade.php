@@ -15,7 +15,7 @@
                 </span>
                 <input type="text" id="customerSearch" class="form-control search-glow" placeholder="Search customers...">
             </div>
-            <button class="btn btn-neon" data-bs-toggle="modal" data-bs-target="#customerModal" id="addBtn">
+            <button class="btn btn-neon" data-bs-toggle="modal" data-bs-target="#customerModal" id="addCustomerBtn">
                 <i class="fa-solid fa-plus me-2"></i> Add Customer
             </button>
         </div>
@@ -111,7 +111,7 @@ const BASE = '/admin';
 
 $(document).ready(function() {
     // Reset modal on open for ADD
-    $('#addBtn').click(function() {
+    $('#addCustomerBtn').click(function() {
         $('#modalTitle').text('Add New Customer');
         $('#customerForm')[0].reset();
         $('#customer_id').val('');
