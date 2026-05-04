@@ -10,15 +10,19 @@
     <link rel="stylesheet" href="{{ asset('css/admin-dark.css') }}">
     @yield('styles')
 </head>
-<body>
+<body style="overflow-x: hidden;">
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
 
+
     <nav id="sidebar" style="overflow-y: auto; max-height: 100vh; padding-bottom: 100px;">
-        <div class="p-4 mb-2">
+        <div class="p-4 mb-2 d-flex justify-content-between align-items-center">
             <a href="{{ route('welcome') }}" style="text-decoration:none">
                 @include('partials.logo')
             </a>
+            <button id="sidebar-close" class="btn btn-link text-white d-lg-none p-0">
+                <i class="fa-solid fa-xmark fs-4"></i>
+            </button>
         </div>
 
         <div class="nav flex-column mt-3 px-3">
@@ -119,7 +123,7 @@
             });
 
             // Mobile Sidebar Toggle
-            $('#mobile-sidebar-toggle, #sidebar-overlay').click(function() {
+            $('#mobile-sidebar-toggle, #sidebar-overlay, #sidebar-close').click(function() {
                 $('#sidebar').toggleClass('show');
                 $('#sidebar-overlay').toggleClass('show');
             });
