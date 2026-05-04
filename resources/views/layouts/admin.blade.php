@@ -25,8 +25,8 @@
             </button>
         </div>
 
-        <div class="nav flex-column mt-3 px-3">
-            <div class="text-secondary small text-uppercase fw-bold mb-2 letter-spacing-1" style="font-size: 0.65rem; opacity: 0.6;">Core Management</div>
+        <div class="nav flex-column mt-3 px-2" style="padding-bottom: 100px;">
+            <div class="sidebar-heading">Core Management</div>
             
             <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                 <i class="fa-solid fa-gauge-high"></i><span>Dashboard</span>
@@ -45,7 +45,7 @@
                 <i class="fa-solid fa-users"></i><span>Customers</span>
             </a>
 
-            <div class="text-secondary small text-uppercase fw-bold mt-4 mb-2 letter-spacing-1" style="font-size: 0.65rem; opacity: 0.6;">Admin Tools</div>
+            <div class="sidebar-heading">Admin Tools</div>
 
             <a href="{{ route('messages.index') }}" class="nav-link {{ request()->routeIs('messages.*') ? 'active' : '' }}">
                 <i class="fa-solid fa-envelope"></i><span>Messages</span>

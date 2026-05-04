@@ -69,41 +69,50 @@ h1, h2, h3, h4, h5, h6, .fw-bold {
 
 #sidebar .nav-link {
     color: var(--text-secondary);
-    padding: 12px 20px;
-    margin: 8px 15px;
-    border-radius: 10px;
+    padding: 12px 18px;
+    margin: 4px 15px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    transition: all 0.3s ease;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 #sidebar .nav-link i {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     min-width: 24px;
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
-#sidebar .nav-link span {
-    white-space: nowrap;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-#sidebar.collapsed .nav-link span {
-    opacity: 0;
-    pointer-events: none;
-}
-
-#sidebar .nav-link:hover, #sidebar .nav-link.active {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
+#sidebar .nav-link:hover {
+    background: rgba(0, 210, 255, 0.05);
+    color: var(--neon-blue);
+    transform: translateX(3px);
 }
 
 #sidebar .nav-link.active {
+    background: linear-gradient(90deg, rgba(0, 210, 255, 0.15) 0%, rgba(0, 210, 255, 0.02) 100%);
+    color: #fff;
     border-left: 3px solid var(--neon-blue);
-    background: linear-gradient(90deg, rgba(0, 210, 255, 0.1) 0%, transparent 100%);
 }
+
+#sidebar .nav-link.active i {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+.sidebar-heading {
+    color: rgba(255,255,255,0.3);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 20px 20px 10px 25px;
+}
+
 
 /* Main Content */
 #main-content {
