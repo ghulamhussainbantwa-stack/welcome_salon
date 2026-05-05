@@ -6,9 +6,9 @@
 
 @section('content')
 <div class="glass-card">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3 mb-4">
         <h5 class="fw-bold mb-0">System Admins</h5>
-        <button class="btn btn-neon" data-bs-toggle="modal" data-bs-target="#userModal" id="addUserBtn">
+        <button class="btn btn-neon w-100 w-sm-auto" data-bs-toggle="modal" data-bs-target="#userModal" id="addUserBtn">
             <i class="fa-solid fa-user-plus me-2"></i> Add New Admin
         </button>
     </div>

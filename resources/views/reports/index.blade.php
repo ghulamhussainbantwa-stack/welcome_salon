@@ -7,35 +7,35 @@
 @section('content')
 
 <!-- Income Stats -->
-<div class="row g-4 mb-5">
-    <div class="col-md-6">
-        <div class="glass-card" style="border-color:rgba(0,255,242,0.25);box-shadow:0 0 20px rgba(0,255,242,0.08)">
-            <div class="d-flex align-items-center gap-3 mb-3">
-                <div style="width:44px;height:44px;border-radius:12px;background:rgba(0,255,242,0.08);display:flex;align-items:center;justify-content:center;">
+<div class="row g-2 g-md-4 mb-4">
+    <div class="col-6">
+        <div class="glass-card h-100 p-2 p-md-3" style="border-color:rgba(0,255,242,0.25);box-shadow:0 0 20px rgba(0,255,242,0.08)">
+            <div class="d-flex align-items-center gap-2 gap-md-3 mb-2 mb-md-3">
+                <div class="d-none d-sm-flex" style="width:40px;height:40px;border-radius:10px;background:rgba(0,255,242,0.08);align-items:center;justify-content:center;">
                     <i class="fa-solid fa-sun" style="color:#00fff2"></i>
                 </div>
                 <div>
-                    <p class="text-secondary small mb-0">Today's Income</p>
-                    <h3 class="fw-bold mb-0" style="color:#00fff2">${{ number_format($today_income, 2) }}</h3>
+                    <p class="text-secondary mb-0" style="font-size:0.7rem">Today's Income</p>
+                    <h4 class="fw-bold mb-0" style="color:#00fff2; font-size:1.1rem">${{ number_format($today_income, 2) }}</h4>
                 </div>
             </div>
-            <div class="progress bg-dark" style="height:4px">
+            <div class="progress bg-dark" style="height:3px">
                 <div class="progress-bar" style="width:45%;background:#00fff2"></div>
             </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="glass-card" style="border-color:rgba(157,80,187,0.25);box-shadow:0 0 20px rgba(157,80,187,0.08)">
-            <div class="d-flex align-items-center gap-3 mb-3">
-                <div style="width:44px;height:44px;border-radius:12px;background:rgba(157,80,187,0.08);display:flex;align-items:center;justify-content:center;">
+    <div class="col-6">
+        <div class="glass-card h-100 p-2 p-md-3" style="border-color:rgba(157,80,187,0.25);box-shadow:0 0 20px rgba(157,80,187,0.08)">
+            <div class="d-flex align-items-center gap-2 gap-md-3 mb-2 mb-md-3">
+                <div class="d-none d-sm-flex" style="width:40px;height:40px;border-radius:10px;background:rgba(157,80,187,0.08);align-items:center;justify-content:center;">
                     <i class="fa-solid fa-calendar" style="color:#9d50bb"></i>
                 </div>
                 <div>
-                    <p class="text-secondary small mb-0">Monthly Revenue</p>
-                    <h3 class="fw-bold mb-0" style="color:#9d50bb">${{ number_format($monthly_income, 2) }}</h3>
+                    <p class="text-secondary mb-0" style="font-size:0.7rem">Monthly Rev</p>
+                    <h4 class="fw-bold mb-0" style="color:#9d50bb; font-size:1.1rem">${{ number_format($monthly_income, 2) }}</h4>
                 </div>
             </div>
-            <div class="progress bg-dark" style="height:4px">
+            <div class="progress bg-dark" style="height:3px">
                 <div class="progress-bar" style="width:65%;background:#9d50bb"></div>
             </div>
         </div>
@@ -44,9 +44,9 @@
 
 <!-- Payment History -->
 <div class="glass-card">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3 mb-4">
         <h5 class="fw-bold mb-0">Payment History</h5>
-        <button class="btn btn-neon py-2 px-4" onclick="window.print()">
+        <button class="btn btn-neon w-100 w-sm-auto" onclick="window.print()">
             <i class="fa-solid fa-print me-2"></i>Print Report
         </button>
     </div>

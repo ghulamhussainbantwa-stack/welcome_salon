@@ -7,23 +7,26 @@
 @section('content')
 
 <!-- Stats Row -->
-<div class="row g-3 mb-4">
-    <div class="col-md-4">
-        <div class="glass-card text-center py-3">
+<div class="row g-2 g-md-3 mb-4">
+    <div class="col-4">
+        <div class="glass-card text-center py-2 py-md-3 h-100">
             <h4 class="fw-bold mb-0" style="color:#fbbf24">{{ $appointments->where('status','pending')->count() }}</h4>
-            <small class="text-secondary">Pending</small>
+            <small class="text-secondary d-none d-sm-block">Pending</small>
+            <small class="text-secondary d-sm-none" style="font-size: 0.6rem;">Pend</small>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="glass-card text-center py-3">
+    <div class="col-4">
+        <div class="glass-card text-center py-2 py-md-3 h-100">
             <h4 class="fw-bold mb-0 text-success">{{ $appointments->where('status','completed')->count() }}</h4>
-            <small class="text-secondary">Completed</small>
+            <small class="text-secondary d-none d-sm-block">Completed</small>
+            <small class="text-secondary d-sm-none" style="font-size: 0.6rem;">Comp</small>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="glass-card text-center py-3">
+    <div class="col-4">
+        <div class="glass-card text-center py-2 py-md-3 h-100">
             <h4 class="fw-bold mb-0 text-danger">{{ $appointments->where('status','cancelled')->count() }}</h4>
-            <small class="text-secondary">Cancelled</small>
+            <small class="text-secondary d-none d-sm-block">Cancelled</small>
+            <small class="text-secondary d-sm-none" style="font-size: 0.6rem;">Canc</small>
         </div>
     </div>
 </div>

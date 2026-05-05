@@ -5,58 +5,57 @@
 @section('page-subtitle', 'Welcome back, Admin. Here\'s what\'s happening today.')
 
 @section('content')
-<div class="row g-4 mb-5">
+<div class="row g-2 g-md-4 mb-4">
     <!-- Stat Cards -->
-    <div class="col-md-3">
-        <div class="glass-card glow-blue">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="p-3 bg-opacity-10 bg-info rounded-3">
-                    <i class="fa-solid fa-users text-neon-blue fs-4"></i>
+    <div class="col-6 col-md-3">
+        <div class="glass-card glow-blue p-3 h-100">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="p-2 bg-opacity-10 bg-info rounded-3">
+                    <i class="fa-solid fa-users text-neon-blue fs-5"></i>
                 </div>
-                <span class="text-success small"><i class="fa-solid fa-arrow-up"></i> 12%</span>
+                <span class="text-success small d-none d-sm-block"><i class="fa-solid fa-arrow-up"></i> 12%</span>
             </div>
-            <h3 class="fw-bold mb-1 counter">{{ $stats['total_customers'] }}</h3>
+            <h3 class="fw-bold mb-0 counter">{{ $stats['total_customers'] }}</h3>
             <p class="text-secondary small mb-0">Total Customers</p>
         </div>
     </div>
     
-    <div class="col-md-3">
-        <div class="glass-card glow-purple">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="p-3 bg-opacity-10 bg-primary rounded-3">
-                    <i class="fa-solid fa-calendar-check text-neon-purple fs-4"></i>
+    <div class="col-6 col-md-3">
+        <div class="glass-card glow-purple p-3 h-100">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="p-2 bg-opacity-10 bg-primary rounded-3">
+                    <i class="fa-solid fa-calendar-check text-neon-purple fs-5"></i>
                 </div>
-                <span class="text-neon-purple small">Today</span>
+                <span class="text-neon-purple small d-none d-sm-block">Today</span>
             </div>
-            <h3 class="fw-bold mb-1 counter">{{ $stats['today_appointments'] }}</h3>
-            <p class="text-secondary small mb-0">Today's Appointments</p>
+            <h3 class="fw-bold mb-0 counter">{{ $stats['today_appointments'] }}</h3>
+            <p class="text-secondary small mb-0">Today's Appts</p>
         </div>
     </div>
 
-    <div class="col-md-3">
-        <div class="glass-card glow-cyan">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="p-3 bg-opacity-10 bg-info rounded-3">
-                    <i class="fa-solid fa-envelope text-neon-cyan fs-4"></i>
+    <div class="col-6 col-md-3">
+        <div class="glass-card glow-cyan p-3 h-100">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="p-2 bg-opacity-10 bg-info rounded-3">
+                    <i class="fa-solid fa-dollar-sign text-neon-cyan fs-5"></i>
                 </div>
-                <span class="text-neon-cyan small">Inbox</span>
+                <span class="text-neon-cyan small d-none d-sm-block">Total</span>
             </div>
-            @php $msgTotal = \App\Models\Message::count(); @endphp
-            <h3 class="fw-bold mb-1 counter">{{ $msgTotal }}</h3>
-            <p class="text-secondary small mb-0">Inquiries & Subs</p>
+            <h3 class="fw-bold mb-0 counter">{{ number_format($stats['total_revenue'] ?? 0) }}</h3>
+            <p class="text-secondary small mb-0">Total Revenue</p>
         </div>
     </div>
 
-    <div class="col-md-3">
-        <div class="glass-card">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="p-3 bg-opacity-10 bg-warning rounded-3">
-                    <i class="fa-solid fa-clock text-warning fs-4"></i>
+    <div class="col-6 col-md-3">
+        <div class="glass-card p-3 h-100">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="p-2 bg-opacity-10 bg-warning rounded-3">
+                    <i class="fa-solid fa-clock text-warning fs-5"></i>
                 </div>
-                <span class="text-warning small">Pending</span>
+                <span class="text-warning small d-none d-sm-block">Pending</span>
             </div>
-            <h3 class="fw-bold mb-1 counter">{{ $stats['pending_appointments'] }}</h3>
-            <p class="text-secondary small mb-0">Pending Requests</p>
+            <h3 class="fw-bold mb-0 counter">{{ $stats['pending_appointments'] }}</h3>
+            <p class="text-secondary small mb-0">Pending</p>
         </div>
     </div>
 </div>

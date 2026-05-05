@@ -15,8 +15,9 @@
 
 
 
-    <nav id="sidebar" style="overflow-y: auto; max-height: 100vh; padding-bottom: 100px;">
-        <div class="p-4 mb-2 d-flex justify-content-between align-items-center">
+    <nav id="sidebar" class="d-flex flex-column">
+        <!-- Sidebar Header -->
+        <div class="p-4 d-flex justify-content-between align-items-center flex-shrink-0">
             <a href="{{ route('welcome') }}" style="text-decoration:none">
                 @include('partials.logo')
             </a>
@@ -25,44 +26,48 @@
             </button>
         </div>
 
-        <div class="nav flex-column mt-3 px-2" style="padding-bottom: 100px;">
-            <div class="sidebar-heading">Core Management</div>
-            
-            <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                <i class="fa-solid fa-gauge-high"></i><span>Dashboard</span>
-            </a>
-            <a href="{{ route('appointments.index') }}" class="nav-link {{ request()->routeIs('appointments.*') ? 'active' : '' }}">
-                <i class="fa-solid fa-calendar-check"></i><span>Appointments</span>
-                @php $apptCount = \App\Models\Appointment::where('status', 'pending')->count(); @endphp
-                @if($apptCount > 0)
-                    <span class="badge bg-info text-black ms-auto" style="font-size: 0.6rem;">{{ $apptCount }}</span>
-                @endif
-            </a>
-            <a href="{{ route('services.index') }}" class="nav-link {{ request()->routeIs('services.*') ? 'active' : '' }}">
-                <i class="fa-solid fa-scissors"></i><span>Services</span>
-            </a>
-            <a href="{{ route('customers.index') }}" class="nav-link {{ request()->routeIs('customers.*') ? 'active' : '' }}">
-                <i class="fa-solid fa-users"></i><span>Customers</span>
-            </a>
+        <!-- Sidebar Body (Scrollable) -->
+        <div class="sidebar-body flex-grow-1" style="overflow-y: auto; padding-bottom: 20px;">
+            <div class="nav flex-column mt-3 px-2">
+                <div class="sidebar-heading">Core Management</div>
+                
+                <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                    <i class="fa-solid fa-gauge-high"></i><span>Dashboard</span>
+                </a>
+                <a href="{{ route('appointments.index') }}" class="nav-link {{ request()->routeIs('appointments.*') ? 'active' : '' }}">
+                    <i class="fa-solid fa-calendar-check"></i><span>Appointments</span>
+                    @php $apptCount = \App\Models\Appointment::where('status', 'pending')->count(); @endphp
+                    @if($apptCount > 0)
+                        <span class="badge bg-info text-black ms-auto" style="font-size: 0.6rem;">{{ $apptCount }}</span>
+                    @endif
+                </a>
+                <a href="{{ route('services.index') }}" class="nav-link {{ request()->routeIs('services.*') ? 'active' : '' }}">
+                    <i class="fa-solid fa-scissors"></i><span>Services</span>
+                </a>
+                <a href="{{ route('customers.index') }}" class="nav-link {{ request()->routeIs('customers.*') ? 'active' : '' }}">
+                    <i class="fa-solid fa-users"></i><span>Customers</span>
+                </a>
 
-            <div class="sidebar-heading">Admin Tools</div>
+                <div class="sidebar-heading">Admin Tools</div>
 
-            <a href="{{ route('messages.index') }}" class="nav-link {{ request()->routeIs('messages.*') ? 'active' : '' }}">
-                <i class="fa-solid fa-envelope"></i><span>Messages</span>
-                @php $msgCount = \App\Models\Message::where('is_read', false)->count(); @endphp
-                @if($msgCount > 0)
-                    <span class="badge bg-danger ms-auto" style="font-size: 0.6rem;">{{ $msgCount }}</span>
-                @endif
-            </a>
-            <a href="{{ route('users.index') }}" class="nav-link {{ request()->routeIs('users.*') ? 'active' : '' }}">
-                <i class="fa-solid fa-user-gear"></i><span>Manage Users</span>
-            </a>
-            <a href="{{ route('reports.index') }}" class="nav-link {{ request()->routeIs('reports.*') ? 'active' : '' }}">
-                <i class="fa-solid fa-chart-line"></i><span>Reports</span>
-            </a>
+                <a href="{{ route('messages.index') }}" class="nav-link {{ request()->routeIs('messages.*') ? 'active' : '' }}">
+                    <i class="fa-solid fa-envelope"></i><span>Messages</span>
+                    @php $msgCount = \App\Models\Message::where('is_read', false)->count(); @endphp
+                    @if($msgCount > 0)
+                        <span class="badge bg-danger ms-auto" style="font-size: 0.6rem;">{{ $msgCount }}</span>
+                    @endif
+                </a>
+                <a href="{{ route('users.index') }}" class="nav-link {{ request()->routeIs('users.*') ? 'active' : '' }}">
+                    <i class="fa-solid fa-user-gear"></i><span>Manage Users</span>
+                </a>
+                <a href="{{ route('reports.index') }}" class="nav-link {{ request()->routeIs('reports.*') ? 'active' : '' }}">
+                    <i class="fa-solid fa-chart-line"></i><span>Reports</span>
+                </a>
+            </div>
         </div>
 
-        <div style="position:absolute;bottom:0;width:100%;padding:15px 20px;background:var(--bg-dark);border-top:1px solid var(--border-glass);z-index: 10;">
+        <!-- Sidebar Footer (Fixed) -->
+        <div class="sidebar-footer flex-shrink-0" style="padding:15px 20px; background:rgba(10,10,10,0.98); border-top:1px solid var(--border-glass);">
             <a href="{{ route('welcome') }}" target="_blank" class="nav-link text-neon-blue d-flex align-items-center gap-2 py-1">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i><span style="font-size: 0.85rem;">View Website</span>
             </a>
@@ -78,7 +83,7 @@
     <!-- Main Content -->
     <main id="main-content">
         <header class="admin-header mb-4">
-            <div class="d-flex align-items-center justify-content-between w-100">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 w-100">
                 <div class="d-flex align-items-center gap-2">
                     <button id="mobile-sidebar-toggle" class="btn btn-neon d-lg-none" style="padding:8px 12px;">
                         <i class="fa-solid fa-bars"></i>
@@ -88,12 +93,11 @@
                         <p class="text-secondary mb-0 small d-none d-md-block">@yield('page-subtitle')</p>
                     </div>
                 </div>
-                <div class="d-flex align-items-center gap-2">
-                    <div class="glass-card py-2 px-3 d-flex align-items-center gap-2">
-                        <img src="https://ui-avatars.com/api/?name=Admin&background=00d2ff&color=fff" class="rounded-circle" width="32" alt="Admin">
-                        <div class="d-none d-md-block">
-                            <p class="mb-0 fw-bold" style="font-size:0.8rem">Admin User</p>
-                            <small class="text-neon-blue" style="font-size:0.65rem">Super Admin</small>
+                <div class="d-flex align-items-center gap-2 ms-auto ms-md-0">
+                    <div class="glass-card py-1 px-2 py-md-2 px-md-3 d-flex align-items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=00d2ff&color=fff" class="rounded-circle" width="28" height="28" alt="Admin">
+                        <div class="d-none d-sm-block">
+                            <p class="mb-0 fw-bold" style="font-size:0.75rem">Admin</p>
                         </div>
                     </div>
                     <form action="{{ route('logout') }}" method="POST">

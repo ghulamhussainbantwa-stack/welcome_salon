@@ -50,6 +50,21 @@ body {
     background: var(--gradient-1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: font-size 0.3s ease;
+}
+
+@media (max-width: 380px) {
+    .navbar-brand-text {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 280px) {
+    .navbar-brand-text {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+    }
 }
 
 .nav-link-custom {
@@ -135,15 +150,18 @@ body {
     background: var(--gradient-1);
     color: #fff;
     border: none;
-    padding: 16px 40px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1rem;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
     letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 30px rgba(0,210,255,0.35);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 20px rgba(0,210,255,0.2);
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .btn-primary-glow:hover {
@@ -156,13 +174,16 @@ body {
     background: transparent;
     color: #fff;
     border: 1px solid var(--border-glass);
-    padding: 15px 38px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
+    padding: 13px 30px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .btn-outline-glow:hover {
@@ -287,6 +308,19 @@ body {
     -webkit-text-fill-color: transparent;
     font-size: 1.8rem;
     font-weight: 800;
+    transition: font-size 0.3s ease;
+}
+
+@media (max-width: 575.98px) {
+    .service-price-tag {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .service-price-tag {
+        font-size: 1.2rem;
+    }
 }
 
 /* ======= PACKAGE CARDS (E-COMMERCE STYLE) ======= */
@@ -396,8 +430,13 @@ body {
     .hero-image-box { margin-top: 50px; }
     .hero-float-card { display: none; }
     .section-title { font-size: 2.2rem; }
-    .hero-section .d-flex { flex-direction: column; width: 100%; align-items: stretch; }
-    .btn-primary-glow, .btn-outline-glow { width: 100%; text-align: center; }
+    .hero-section .d-flex { flex-direction: column; width: 100%; align-items: stretch; gap: 15px; }
+    .btn-primary-glow, .btn-outline-glow { 
+        width: 100%; 
+        text-align: center; 
+        padding: 12px 20px; 
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 575.98px) {

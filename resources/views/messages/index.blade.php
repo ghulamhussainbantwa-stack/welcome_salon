@@ -6,7 +6,7 @@
  
 @section('content')
 <div class="glass-card">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3 mb-4">
         <h5 class="fw-bold mb-0">Inbox</h5>
     </div>
  

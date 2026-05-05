@@ -39,9 +39,9 @@
                     <div class="glass-card p-2 rotate-3">
                         <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1000&auto=format&fit=crop" alt="Salon Interior" class="img-fluid rounded-4 shadow-lg">
                     </div>
-                    <div class="position-absolute bottom-0 start-0 translate-middle-x ms-5 mb-n5 d-none d-md-block">
-                        <div class="glass-card p-4 glow-blue">
-                            <p class="fw-bold mb-0 text-white">Award Winning Salon 2023</p>
+                    <div class="position-absolute bottom-0 start-0 w-100 mb-n3 mb-md-n5 text-center">
+                        <div class="glass-card d-inline-block p-3 p-md-4 glow-blue mx-auto" style="max-width: 90%;">
+                            <p class="fw-bold mb-0 text-white" style="font-size: 0.85rem;">Award Winning Salon 2023</p>
                         </div>
                     </div>
                 </div>

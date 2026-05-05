@@ -31,7 +31,7 @@
                         <img src="{{ (isset($service->image_url) && str_starts_with($service->image_url, 'http') && !str_contains($service->image_url, 'placeholder')) ? $service->image_url : 'https://images.unsplash.com/photo-'.$imgId.'?q=80&w=800' }}" class="img-fluid w-100 h-100 object-fit-cover" alt="{{ $service->name }}" onerror="this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800'">
                     </div>
                     <div class="p-4 flex-grow-1">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
                             <h4 class="fw-bold mb-0">{{ $service->name }}</h4>
                             <span class="service-price-tag">${{ number_format($service->price, 2) }}</span>
                         </div>
